@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kewatsbiryani.com/sitemap.xml
