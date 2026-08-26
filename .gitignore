@@ -1,6 +1,6 @@
-.netlify/
 *.zip
-*.log
-*.webp
+.DS_Store
+preview.html
+restore_info.txt
+.netlify/
 Kewat_Biryani_Palace_Complete/
-New folder/
