@@ -1191,6 +1191,127 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
   }
 }
 
+
+/* LIGHT & WARM CREAM THEME FOR ORDER PAGE */
+#contact.page {
+  background: #fbf7f0;
+  color: #2b1913;
+}
+.lightOrderHeader {
+  background: linear-gradient(135deg, #f7ecd9 0%, #faf3e6 100%);
+  padding: 75px 0 45px;
+  border-bottom: 1.5px solid rgba(200, 154, 63, 0.35);
+  color: #2b1913;
+}
+.lightOrderHeader h2 {
+  font: clamp(40px, 5vw, 68px) 'Rozha One', serif;
+  color: #2b1913;
+  margin: 12px 0 16px;
+}
+.lightOrderHeader p {
+  color: #4a382e;
+}
+
+.lightOrderSection {
+  background: #fbf7f0;
+  padding: 65px 0 90px;
+}
+
+.lightOrderCard {
+  background: #ffffff;
+  border: 1.5px solid rgba(151, 112, 61, 0.22);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #2b1913;
+  box-shadow: 0 10px 30px rgba(60, 35, 15, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.lightOrderCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(60, 35, 15, 0.16);
+}
+
+.lightOrderCard.swiggy {
+  border-color: rgba(252, 128, 25, 0.35);
+}
+.lightOrderCard.swiggy:hover {
+  border-color: #fc8019;
+  box-shadow: 0 20px 45px rgba(252, 128, 25, 0.2);
+}
+
+.lightOrderCard.zomato {
+  border-color: rgba(226, 55, 68, 0.35);
+}
+.lightOrderCard.zomato:hover {
+  border-color: #e23744;
+  box-shadow: 0 20px 45px rgba(226, 55, 68, 0.2);
+}
+
+.lightOrderCard.whatsapp {
+  border-color: rgba(37, 211, 102, 0.4);
+}
+.lightOrderCard.whatsapp:hover {
+  border-color: #25D366;
+  box-shadow: 0 20px 45px rgba(37, 211, 102, 0.2);
+}
+
+.lightOrderCard.phone {
+  border-color: rgba(200, 154, 63, 0.4);
+}
+.lightOrderCard.phone:hover {
+  border-color: var(--match-gold2);
+  box-shadow: 0 20px 45px rgba(200, 154, 63, 0.2);
+}
+
+.lightCardTitle {
+  font: 24px 'Rozha One', serif;
+  color: #2b1913;
+  margin: 0;
+  line-height: 1.2;
+}
+.lightCardDesc {
+  font-size: 13.5px;
+  color: #59473c;
+  line-height: 1.7;
+  margin: 0 0 22px;
+}
+.lightCardAction {
+  border-top: 1px solid rgba(151, 112, 61, 0.15);
+  padding-top: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.lightLocationBanner {
+  background: #fffdf7;
+  border: 1.5px solid var(--match-gold);
+  border-radius: 16px;
+  padding: 28px 35px;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 12px 35px rgba(60, 35, 15, 0.1);
+  color: #2b1913;
+}
+@media (max-width: 768px) {
+  .lightLocationBanner {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1884,88 +2005,88 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
 </main>
 
 <main id="contact" class="page">
-<section class="section dark" style="background:#061b16;padding:75px 0 45px;border-bottom:1px solid rgba(200,154,63,.25)">
+<section class="lightOrderHeader">
   <div class="container center">
-    <div class="eyebrow" style="color:var(--match-gold2);letter-spacing:3px">ONLINE ORDERING & DIRECT TAKEAWAY</div>
-    <h2 style="font:clamp(40px,5vw,68px) 'Rozha One';color:#f5ecdd;margin:12px 0 16px">Order Online & Takeaway</h2>
-    <p class="lead" style="margin:auto;max-width:640px;color:#d6cec1;font-size:14.5px;line-height:1.8">
-      Craving Kewat’s Biryani? Order instant delivery through Swiggy & Zomato or contact our counter concierge directly for takeaway pickup.
+    <div class="eyebrow" style="color:#986326;letter-spacing:3px">ONLINE ORDERING & DIRECT TAKEAWAY</div>
+    <h2>Order Online & Takeaway</h2>
+    <p class="lead" style="margin:auto;max-width:640px;font-size:14.5px;line-height:1.8">
+      Craving Kewat’s Biryani? Order instant home delivery through Swiggy & Zomato or contact our counter concierge directly for takeaway pickup.
     </p>
   </div>
 </section>
 
-<section class="section dark" style="background:#041410;padding:65px 0 90px">
+<section class="lightOrderSection">
   <div class="container">
     
     <div class="orderGridContainer">
       
       <!-- CARD 1: SWIGGY -->
-      <a href="https://www.swiggy.com" target="_blank" rel="noopener" class="humanOrderCard swiggy reveal">
+      <a href="https://www.swiggy.com" target="_blank" rel="noopener" class="lightOrderCard swiggy reveal">
         <div>
           <div class="orderCardHeader">
             <div class="orderCardIcon" style="background:#fc8019"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div>
-              <span class="orderCardBadge" style="background:rgba(252,128,25,0.2);color:#fc8019">HOME DELIVERY</span>
-              <h3 class="orderCardTitle">Order on Swiggy</h3>
+              <span class="orderCardBadge" style="background:#fff3e6;color:#fc8019">HOME DELIVERY</span>
+              <h3 class="lightCardTitle">Order on Swiggy</h3>
             </div>
           </div>
-          <p class="orderCardDesc">Piping hot Royal Dum Biryani, Combos & Gourmet Burgers delivered right to your home or office with Swiggy Express.</p>
+          <p class="lightCardDesc">Piping hot Royal Dum Biryani, Combos & Gourmet Burgers delivered right to your home or office with Swiggy Express.</p>
         </div>
-        <div class="orderCardAction" style="color:#fc8019">
+        <div class="lightCardAction" style="color:#fc8019">
           <span>Order Now on Swiggy</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <!-- CARD 2: ZOMATO -->
-      <a href="https://www.zomato.com" target="_blank" rel="noopener" class="humanOrderCard zomato reveal">
+      <a href="https://www.zomato.com" target="_blank" rel="noopener" class="lightOrderCard zomato reveal">
         <div>
           <div class="orderCardHeader">
             <div class="orderCardIcon" style="background:#e23744"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
             <div>
-              <span class="orderCardBadge" style="background:rgba(226,55,68,0.2);color:#f05460">FAST DELIVERY</span>
-              <h3 class="orderCardTitle">Order on Zomato</h3>
+              <span class="orderCardBadge" style="background:#ffebee;color:#e23744">FAST DELIVERY</span>
+              <h3 class="lightCardTitle">Order on Zomato</h3>
             </div>
           </div>
-          <p class="orderCardDesc">Explore ratings, customer reviews, and order your favourite Lucknowi & Hyderabadi Biryanis via Zomato.</p>
+          <p class="lightCardDesc">Explore ratings, customer reviews, and order your favourite Lucknowi & Hyderabadi Biryanis via Zomato.</p>
         </div>
-        <div class="orderCardAction" style="color:#f05460">
+        <div class="lightCardAction" style="color:#e23744">
           <span>Order Now on Zomato</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <!-- CARD 3: WHATSAPP DIRECT CHAT ORDER -->
-      <a href="https://wa.me/919876543210?text=Hello%20Kewat's%20Biryani,%20I%20would%20like%20to%20place%20an%20order%20for%20takeaway" target="_blank" rel="noopener" class="humanOrderCard whatsapp reveal">
+      <a href="https://wa.me/919876543210?text=Hello%20Kewat's%20Biryani,%20I%20would%20like%20to%20place%20an%20order%20for%20takeaway" target="_blank" rel="noopener" class="lightOrderCard whatsapp reveal">
         <div>
           <div class="orderCardHeader">
             <div class="orderCardIcon" style="background:#25D366"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
             <div>
-              <span class="orderCardBadge" style="background:rgba(37,211,102,0.2);color:#25D366">INSTANT CHAT</span>
-              <h3 class="orderCardTitle">WhatsApp Direct Order</h3>
+              <span class="orderCardBadge" style="background:#e8f8ef;color:#1ea851">INSTANT CHAT</span>
+              <h3 class="lightCardTitle">WhatsApp Direct Order</h3>
             </div>
           </div>
-          <p class="orderCardDesc">Chat directly with our counter team to customize your takeaway order and set your pickup time.</p>
+          <p class="lightCardDesc">Chat directly with our counter team to customize your takeaway order and set your pickup time.</p>
         </div>
-        <div class="orderCardAction" style="color:#25D366">
+        <div class="lightCardAction" style="color:#1ea851">
           <span>Chat & Order on WhatsApp</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <!-- CARD 4: DIRECT PHONE CALL TAKEAWAY -->
-      <a href="tel:+919876543210" class="humanOrderCard phone reveal">
+      <a href="tel:+919876543210" class="lightOrderCard phone reveal">
         <div>
           <div class="orderCardHeader">
-            <div class="orderCardIcon" style="background:var(--match-gold2)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="orderCardIcon" style="background:#c79b48"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
             <div>
-              <span class="orderCardBadge" style="background:rgba(226,181,91,0.2);color:var(--match-gold2)">TAKEAWAY COUNTER</span>
-              <h3 class="orderCardTitle">Call Counter Host</h3>
+              <span class="orderCardBadge" style="background:#fcf8f0;color:#986326">TAKEAWAY COUNTER</span>
+              <h3 class="lightCardTitle">Call Counter Host</h3>
             </div>
           </div>
-          <p class="orderCardDesc">Speak directly with founder Niraj Kewat’s team for quick phone ordering, bulk family feasts & counter pickup.</p>
+          <p class="lightCardDesc">Speak directly with founder Niraj Kewat’s team for quick phone ordering, bulk family feasts & counter pickup.</p>
         </div>
-        <div class="orderCardAction" style="color:var(--match-gold2)">
+        <div class="lightCardAction" style="color:#986326">
           <span>Call +91 98765 43210</span>
           <span>&rarr;</span>
         </div>
@@ -1974,12 +2095,12 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
     </div>
 
     <!-- LOCATION & HOURS BANNER -->
-    <div class="locationBanner reveal">
+    <div class="lightLocationBanner reveal">
       <div>
-        <strong style="display:block;font:22px 'Rozha One';color:#f5ecdd;margin-bottom:4px">Kewat's Biryani Counter Location</strong>
-        <p style="margin:0;font-size:13px;color:#d6cec1">Main Palace Road, Lucknow, UP • Open Daily: 11:00 AM – 11:00 PM</p>
+        <strong style="display:block;font:22px 'Rozha One';color:#2b1913;margin-bottom:4px">Kewat's Biryani Counter Location</strong>
+        <p style="margin:0;font-size:13px;color:#59473c">Main Palace Road, Lucknow, UP • Open Daily: 11:00 AM – 11:00 PM</p>
       </div>
-      <a href="https://share.google/WJyT2wq0oeMnBty4u" target="_blank" rel="noopener" class="matchBtn outline" style="text-decoration:none;white-space:nowrap">
+      <a href="https://share.google/WJyT2wq0oeMnBty4u" target="_blank" rel="noopener" class="matchBtn red" style="text-decoration:none;white-space:nowrap">
         OPEN GOOGLE MAPS &nbsp; &rarr;
       </a>
     </div>
