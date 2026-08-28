@@ -971,6 +971,145 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
   }
 }
 
+
+/* NAVBAR SWIGGY & ZOMATO BRAND BUTTONS */
+.navBrandGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.navBrandBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+.swiggyNavBtn {
+  background: #fc8019;
+  color: #ffffff !important;
+  border: 1px solid #ff9538;
+  box-shadow: 0 4px 12px rgba(252,128,25,0.25);
+}
+.swiggyNavBtn:hover {
+  background: #e5700e;
+  box-shadow: 0 6px 18px rgba(252,128,25,0.45);
+  transform: translateY(-2px);
+}
+.zomatoNavBtn {
+  background: #cb202d;
+  color: #ffffff !important;
+  border: 1px solid #e23744;
+  box-shadow: 0 4px 12px rgba(203,32,45,0.25);
+}
+.zomatoNavBtn:hover {
+  background: #b21925;
+  box-shadow: 0 6px 18px rgba(203,32,45,0.45);
+  transform: translateY(-2px);
+}
+
+/* PREMIUM RESERVATION SECTION STYLING */
+.resContainer {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 35px;
+  align-items: start;
+}
+.resFormCard {
+  background: #08251e;
+  border: 1.5px solid var(--match-gold2);
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.resFormTitle {
+  font: 32px 'Rozha One', serif;
+  color: #f5ecdd;
+  margin: 0 0 8px;
+}
+.resFormDesc {
+  font-size: 13px;
+  color: #d6cec1;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+.resFormGroup {
+  margin-bottom: 18px;
+}
+.resFormGroup label {
+  display: block;
+  font: 11px Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--match-gold2);
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+.resInput, .resSelect, .resTextarea {
+  width: 100%;
+  background: #041410;
+  border: 1px solid rgba(200,154,63,0.4);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #f5ecdd;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+.resInput:focus, .resSelect:focus, .resTextarea:focus {
+  border-color: var(--match-gold2);
+  box-shadow: 0 0 12px rgba(226,181,91,0.25);
+}
+.resFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.resSubmitBtn {
+  width: 100%;
+  background: var(--match-red);
+  border: 1px solid var(--match-gold);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+.resSubmitBtn:hover {
+  background: #a9271d;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .resContainer {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+  .resFormRow {
+    grid-template-columns: 1fr !important;
+  }
+  .navBrandGroup {
+    gap: 5px;
+  }
+  .navBrandBtn {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1003,7 +1142,11 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
     <button data-target="experience" onclick="go('experience')">EXPERIENCE</button>
     <button data-target="contact" onclick="go('contact')">RESERVATIONS</button>
   </div>
-  <button class="navOrder" onclick="go('contact')">♜ &nbsp; ORDER ONLINE</button>
+  <div class="navBrandGroup">
+    <a href="https://www.swiggy.com" target="_blank" rel="noopener" class="navBrandBtn swiggyNavBtn">🧡 Swiggy</a>
+    <a href="https://www.zomato.com" target="_blank" rel="noopener" class="navBrandBtn zomatoNavBtn">❤️ Zomato</a>
+    <button class="navOrder" onclick="go('contact')">♜ &nbsp; TABLE BOOKING</button>
+  </div>
 </div></nav>
 
 
@@ -1660,91 +1803,142 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
 </main>
 
 <main id="contact" class="page">
-<section class="section dark" style="background:#061b16;padding:85px 0 45px;border-bottom:1px solid rgba(200,154,63,.25)">
+<section class="section dark" style="background:#061b16;padding:75px 0 45px;border-bottom:1px solid rgba(200,154,63,.25)">
   <div class="container center">
-    <div class="eyebrow">PALACE CONCIERGE</div>
-    <h2 style="font:clamp(44px,6vw,72px) 'Rozha One';color:#f5ecdd;margin:12px 0 16px">Reservations & Orders</h2>
-    <p class="lead" style="margin:auto;max-width:580px;color:#d6cec1;font-size:15px;line-height:1.8">Connect directly with our palace table concierge for reservations, direct takeaway, or order online via Swiggy & Zomato.</p>
+    <div class="eyebrow" style="color:var(--match-gold2);letter-spacing:3px">PALACE CONCIERGE & TABLE RESERVATIONS</div>
+    <h2 style="font:clamp(40px,5vw,68px) 'Rozha One';color:#f5ecdd;margin:12px 0 16px">Reserve Your Table</h2>
+    <p class="lead" style="margin:auto;max-width:620px;color:#d6cec1;font-size:14.5px;line-height:1.8">
+      Book your table in advance for piping hot copper handi biryani cooked fresh upon your arrival. Enjoy authentic royal hospitality in a clean, air-conditioned dining atmosphere.
+    </p>
   </div>
 </section>
 
-<section class="section dark" style="background:#041410;padding:70px 0 90px">
-  <div class="container" style="max-width:960px">
-    
-    <!-- Minimalist Concierge Cards Grid -->
-    <div class="minimalConciergeGrid">
+<section class="section dark" style="background:#041410;padding:65px 0 90px">
+  <div class="container">
+    <div class="resContainer">
+      
+      <!-- LEFT: PREMIUM RESERVATION FORM -->
+      <div class="resFormCard reveal">
+        <h3 class="resFormTitle">Table Booking Form</h3>
+        <p class="resFormDesc">Fill in your dining preferences and our table host will instantly reserve your seating slot.</p>
 
-      <!-- CARD 1: Direct Phone Call for Table / Takeaway -->
-      <a href="tel:+919876543210" class="minCard reveal">
-        <div class="minCardHeader">
-          <div class="minSvgIcon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e2b55b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <form id="reservationForm" onsubmit="handleReservationSubmit(event)">
+          <div class="resFormRow">
+            <div class="resFormGroup">
+              <label>Full Name *</label>
+              <input type="text" id="resName" class="resInput" placeholder="Enter your full name" required>
+            </div>
+            <div class="resFormGroup">
+              <label>Mobile Number *</label>
+              <input type="tel" id="resPhone" class="resInput" placeholder="+91 XXXXX XXXXX" required>
+            </div>
           </div>
-          <span class="minTag">DIRECT CALL</span>
-        </div>
-        <h3>Table Booking & Takeaway</h3>
-        <p>Speak directly with our table host for instant reservations, party orders & takeaway pickup.</p>
-        <div class="minVal">+91 98765 43210</div>
-        <div class="minAction">Tap to Call Palace Concierge &nbsp; →</div>
-      </a>
 
-      <!-- CARD 2: Swiggy Order -->
-      <a href="https://www.swiggy.com" target="_blank" rel="noopener" class="minCard swiggyCard reveal">
-        <div class="minCardHeader">
-          <div class="minSvgIcon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fc8019" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="resFormRow">
+            <div class="resFormGroup">
+              <label>Number of Guests *</label>
+              <select id="resGuests" class="resSelect" required>
+                <option value="1-2 Guests">1 - 2 Guests (Cozy Dining)</option>
+                <option value="3-4 Guests (Family Table)">3 - 4 Guests (Family Table)</option>
+                <option value="5-8 Guests (Group Feast)">5 - 8 Guests (Group Feast)</option>
+                <option value="8+ Guests (Royal Banquet)">8+ Guests (Royal Celebration)</option>
+              </select>
+            </div>
+            <div class="resFormGroup">
+              <label>Dining Atmosphere *</label>
+              <select id="resSeating" class="resSelect" required>
+                <option value="✨ A/C Family Dining Hall">✨ A/C Family Dining Hall</option>
+                <option value="🧱 Rustic Brick Seating Booth">🧱 Rustic Brick Seating Booth</option>
+                <option value="👑 Founder VIP Handi Table">👑 Founder VIP Handi Table</option>
+              </select>
+            </div>
           </div>
-          <span class="minTag swiggy">SWIGGY</span>
-        </div>
-        <h3>Order via Swiggy</h3>
-        <p>Fresh, piping hot Dum Biryani delivered right to your home or office with Swiggy Gourmet.</p>
-        <div class="minVal">Swiggy Home Delivery</div>
-        <div class="minAction">Order on Swiggy &nbsp; →</div>
-      </a>
 
-      <!-- CARD 3: Zomato Order / Dining -->
-      <a href="https://www.zomato.com" target="_blank" rel="noopener" class="minCard zomatoCard reveal">
-        <div class="minCardHeader">
-          <div class="minSvgIcon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cb202d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <div class="resFormRow">
+            <div class="resFormGroup">
+              <label>Date *</label>
+              <input type="date" id="resDate" class="resInput" required>
+            </div>
+            <div class="resFormGroup">
+              <label>Preferred Time Slot *</label>
+              <select id="resTime" class="resSelect" required>
+                <option value="12:30 PM (Lunch Slot)">12:30 PM (Lunch Slot)</option>
+                <option value="02:00 PM (Lunch Slot)">02:00 PM (Lunch Slot)</option>
+                <option value="07:30 PM (Dinner Slot)">07:30 PM (Dinner Slot)</option>
+                <option value="09:00 PM (Dinner Slot)">09:00 PM (Dinner Slot)</option>
+                <option value="10:15 PM (Late Dinner)">10:15 PM (Late Dinner)</option>
+              </select>
+            </div>
           </div>
-          <span class="minTag zomato">ZOMATO</span>
-        </div>
-        <h3>Order / Reserve via Zomato</h3>
-        <p>Explore ratings, book dining slots, or order seamless delivery via Zomato Pro.</p>
-        <div class="minVal">Zomato Dining & Delivery</div>
-        <div class="minAction">Order on Zomato &nbsp; →</div>
-      </a>
 
-      <!-- CARD 4: Google Maps Location -->
-      <a href="https://share.google/WJyT2wq0oeMnBty4u" target="_blank" rel="noopener" class="minCard mapsCard reveal">
-        <div class="minCardHeader">
-          <div class="minSvgIcon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e2b55b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="resFormGroup">
+            <label>Special Notes / Dish Preference</label>
+            <textarea id="resNotes" class="resTextarea" rows="3" placeholder="e.g. Celebrating a Birthday, Extra Spicy Dum Handi, High-chair for kids..."></textarea>
           </div>
-          <span class="minTag">LOCATION</span>
-        </div>
-        <h3>Google Maps Navigation</h3>
-        <p>Visit Kewat's Biryani Palace in person. Get step-by-step driving directions.</p>
-        <div class="minVal">share.google/WJyT2wq0oeMnBty4u</div>
-        <div class="minAction">Open Location in Maps &nbsp; →</div>
-      </a>
 
-    </div>
-
-    <!-- Secondary Email Concierge Banner -->
-    <div class="minBanner reveal">
-      <div class="bannerContent">
-        <div class="minSvgInline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e2b55b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div>
-          <strong>Corporate & Large Banquet Enquiries</strong>
-          <p>For event catering, bulk family feasts & corporate reservations, email us at <a href="mailto:reservations@kewatsbiryani.com" style="color:var(--match-gold2);text-decoration:underline">reservations@kewatsbiryani.com</a></p>
-        </div>
+          <button type="submit" class="resSubmitBtn">CONFIRM TABLE RESERVATION &nbsp; →</button>
+        </form>
       </div>
-    </div>
 
+      <!-- RIGHT: DIRECT CONCIERGE & ORDER CARDS -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        
+        <!-- CARD 1: Direct Call -->
+        <a href="tel:+919876543210" class="minCard reveal" style="text-decoration:none">
+          <div class="minCardHeader">
+            <div class="minSvgIcon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e2b55b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="minTag">DIRECT CALL</span>
+          </div>
+          <h3>Call Table Host Directly</h3>
+          <p>Instant phone booking & party takeaway concierge.</p>
+          <div class="minVal">+91 98765 43210</div>
+          <div class="minAction">Tap to Call Concierge &nbsp; →</div>
+        </a>
+
+        <!-- CARD 2: Swiggy Order -->
+        <a href="https://www.swiggy.com" target="_blank" rel="noopener" class="minCard swiggyCard reveal" style="text-decoration:none">
+          <div class="minCardHeader">
+            <div class="minSvgIcon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fc8019" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="minTag swiggy">SWIGGY</span>
+          </div>
+          <h3>Order on Swiggy Gourmet</h3>
+          <div class="minVal">Home & Office Delivery</div>
+          <div class="minAction">Order via Swiggy &nbsp; →</div>
+        </a>
+
+        <!-- CARD 3: Zomato Order -->
+        <a href="https://www.zomato.com" target="_blank" rel="noopener" class="minCard zomatoCard reveal" style="text-decoration:none">
+          <div class="minCardHeader">
+            <div class="minSvgIcon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cb202d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <span class="minTag zomato">ZOMATO</span>
+          </div>
+          <h3>Order on Zomato</h3>
+          <div class="minVal">Zomato Pro Dining & Delivery</div>
+          <div class="minAction">Order via Zomato &nbsp; →</div>
+        </a>
+
+        <!-- CARD 4: Location Info -->
+        <a href="https://share.google/WJyT2wq0oeMnBty4u" target="_blank" rel="noopener" class="minCard mapsCard reveal" style="text-decoration:none">
+          <div class="minCardHeader">
+            <div class="minSvgIcon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e2b55b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="minTag">LOCATION</span>
+          </div>
+          <h3>Restaurant Location</h3>
+          <div class="minVal">Main Palace Road, Lucknow, UP</div>
+          <div class="minAction">Open Driving Directions &nbsp; →</div>
+        </a>
+
+      </div>
+
+    </div>
   </div>
 </section>
 </main>
