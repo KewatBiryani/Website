@@ -607,6 +607,288 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
  .heroSideBadge{width:82px;height:82px;right:1%;top:30%}.heroSideBadge strong{font-size:23px}.heroSideBadge small{font-size:6px}.foodBadge{width:78px;height:78px;right:3%;bottom:10%;font-size:12px}
  .steam{top:-2%;height:210px}
 }
+
+/* =========================================================
+   HUMAN & MOBILE-PERFECT RESPONSIVE DESIGN OVERRIDES
+   ========================================================= */
+.menuCards, .combosGrid, .matchFoodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media(max-width: 1024px) {
+  .menuCards, .combosGrid, .matchFoodGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+}
+@media(max-width: 680px) {
+  .menuCards, .combosGrid, .matchFoodGrid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .menuNav {
+    top: 68px !important;
+  }
+}
+
+/* Category Filter Pills */
+.filterPills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0 35px;
+}
+.filterPill {
+  background: #09251e;
+  border: 1px solid rgba(200, 154, 63, 0.4);
+  color: #f5ecdd;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.filterPill:hover, .filterPill.active {
+  background: var(--match-gold2);
+  color: #061b16;
+  border-color: var(--match-gold2);
+  box-shadow: 0 6px 18px rgba(226, 181, 91, 0.35);
+}
+
+/* Modern Human Dish Cards */
+.humanFoodCard {
+  background: #08251e;
+  border: 1px solid rgba(200, 154, 63, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.humanFoodCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--match-gold2);
+  box-shadow: 0 20px 45px rgba(0,0,0,.5);
+}
+.humanFoodCardMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #041410;
+}
+.humanFoodCardMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.humanFoodCard:hover .humanFoodCardMedia img {
+  transform: scale(1.06);
+}
+.humanBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(6, 27, 22, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--match-gold2);
+  color: var(--match-gold2);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+.humanVegBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(6, 27, 22, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid #62a362;
+  color: #72c772;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.humanFoodCardBody {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.humanFoodCardTitle {
+  font: 22px 'Rozha One', serif;
+  color: #f5ecdd;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+.humanFoodCardDesc {
+  font-size: 12.5px;
+  color: #d6cec1;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+.humanFoodCardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(200, 154, 63, 0.2);
+  padding-top: 12px;
+  margin-top: auto;
+}
+.humanPrice {
+  font: 24px 'Yatra One', cursive;
+  color: var(--match-gold2);
+}
+.orderBtn {
+  background: var(--match-red);
+  border: 1px solid var(--match-gold);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.orderBtn:hover {
+  background: #a9271d;
+}
+
+/* Modal Popup Styling */
+.customModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(4, 17, 13, 0.88);
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s;
+}
+.customModalOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.customModalBox {
+  background: #08251e;
+  border: 1.5px solid var(--match-gold2);
+  border-radius: 14px;
+  max-width: 520px;
+  width: 100%;
+  padding: 30px;
+  color: #f6ead7;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modalCloseBtn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: transparent;
+  border: 0;
+  color: var(--match-gold2);
+  font-size: 24px;
+  cursor: pointer;
+}
+.modalBoxTitle {
+  font: 28px 'Rozha One', serif;
+  color: #f5ecdd;
+  margin: 0 0 14px;
+}
+.modalBoxText p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #d6cec1;
+  margin-bottom: 12px;
+}
+
+/* Footer Refinement */
+.humanFooter {
+  background: #03110d;
+  color: #c4b6a5;
+  border-top: 2px solid var(--match-gold);
+  padding: 60px 0 30px;
+  font-size: 12px;
+}
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1fr 0.8fr;
+  gap: 35px;
+  margin-bottom: 45px;
+}
+@media(max-width: 900px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+@media(max-width: 580px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.footerCol h4 {
+  font: 20px 'Rozha One', serif;
+  color: #f5ecdd;
+  margin: 0 0 16px;
+}
+.footerCol p, .footerCol li {
+  line-height: 1.8;
+  color: #d6cec1;
+}
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footerCol a {
+  color: #d6cec1;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.footerCol a:hover {
+  color: var(--match-gold2);
+}
+.footerBottom {
+  border-top: 1px solid rgba(200, 154, 63, 0.2);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.fssaiBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200, 154, 63, 0.1);
+  border: 1px solid rgba(200, 154, 63, 0.3);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--match-gold2);
+}
+
 </style>
 </head>
 <body>
@@ -715,7 +997,7 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
     <div class="matchSectionTitle reveal">
       <div class="matchEyebrow" style="margin-bottom:30px">⌁ &nbsp; OUR SIGNATURE BIRYANIS &nbsp; ⌁</div>
     </div>
-    <div class="matchFoodGrid" style="grid-template-columns:repeat(4,1fr)">
+    <div class="matchFoodGrid">
       <article class="matchDish reveal">
         <div class="dishCircle"><img src="images/lucknowi_chicken_biryani.jpg" alt="Royal Lucknowi Chicken Biryani"></div>
         <h3>ROYAL LUCKNOWI<br>CHICKEN BIRYANI</h3><p>Delicate, aromatic and royally satisfying.</p><strong>₹229</strong>
@@ -835,201 +1117,191 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
 
 
 <main id="menu" class="page">
-<style>
-/* High contrast dark menu treatment */
-#menu.page{background:#061b16;color:#f6ead7}
-.menuHero{padding:86px 0 58px;background:linear-gradient(135deg,#061b16,#0b2a21 55%,#072019);color:#f6ead7;position:relative;overflow:hidden;border-bottom:1px solid var(--match-gold)}
-.menuHero:before{content:"";position:absolute;inset:0;opacity:.08;background-image:radial-gradient(var(--match-gold2) 1px,transparent 1px);background-size:24px 24px}
-.menuHeroInner{position:relative;z-index:1}
-.menuKicker{font:11px 'Yatra One';letter-spacing:4px;color:var(--match-gold2)}
-.menuHero h2{font-size:clamp(50px,7vw,84px);margin:13px 0 18px;color:#f5ecdd}
-.menuHero p{max-width:650px;margin:auto;color:#dccfba;line-height:1.9;font-size:14px}
-.menuNav{position:sticky;top:82px;z-index:30;background:#08251e;backdrop-filter:blur(12px);border-bottom:1px solid var(--match-gold);overflow-x:auto}
-.menuNavInner{display:flex;justify-content:center;gap:6px;min-width:max-content;padding:12px 0}
-.menuNav button{border:0;background:transparent;color:#f5ecdd;padding:10px 20px;font-size:12px;letter-spacing:1.5px;cursor:pointer;font-weight:600;transition:color .3s}
-.menuNav button:hover{color:var(--match-gold2)}
-.menuSection{padding:72px 0 20px;background:#061b16}
-.menuSectionHead{display:flex;align-items:end;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(200,154,63,.3);padding-bottom:18px;margin-bottom:24px}
-.menuSectionHead .num{font:13px 'Yatra One';color:var(--match-gold2)}
-.menuSectionHead h3{font:42px 'Rozha One';font-weight:400;margin:4px 0 0;color:#f5ecdd}
-.menuSectionHead p{font-size:13px;color:#d6cec1;max-width:420px;text-align:right;line-height:1.7;margin:0}
-.menuCards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.foodCard{background:#09251e;border:1px solid rgba(200,154,63,.35);border-radius:10px;padding:12px;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column;justify-content:space-between}
-.foodCard:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.4);border-color:var(--match-gold2)}
-.foodCardMedia{height:200px;overflow:hidden;position:relative;border-radius:6px}
-.foodCardMedia img{width:100%;height:100%;object-fit:cover;display:block}
-.foodCardBody{padding:16px 6px 6px;display:flex;flex-direction:column;flex-grow:1;justify-content:space-between}
-.foodCardMeta{display:flex;justify-content:space-between;gap:10px;align-items:start}
-.foodCard h4{font:21px 'Yatra One';font-weight:400;margin:0;line-height:1.1;color:#f5ecdd}
-.foodCard .foodPrice{font:18px 'Yatra One';color:var(--match-gold2);white-space:nowrap}
-.foodCard p{font-size:12px;color:#d6cec1;line-height:1.6;margin:9px 0 0}
-.spicy{color:var(--match-gold2);font-size:10px;letter-spacing:1px;margin-top:12px;font-weight:600}
-.vegDot{display:inline-block;width:8px;height:8px;border:1px solid #62a362;background:#498549;border-radius:50%;margin-right:6px}
-.comboCardDark{background:#09251e;border:1px solid rgba(200,154,63,.35);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s,border-color .3s}
-.comboCardDark:hover{transform:translateY(-6px);border-color:var(--match-gold2);box-shadow:0 18px 40px rgba(0,0,0,.4)}
-.comboCardDark.highlighted{border-color:var(--match-gold2);background:#0d3329}
-.comboTagDark{font:9px 'Yatra One';letter-spacing:1px;background:rgba(226,181,91,.15);border:1px solid var(--match-gold2);color:var(--match-gold2);padding:4px 10px;border-radius:12px;display:inline-block;margin-bottom:12px}
-.comboTagDark.gold{background:var(--match-gold);color:#061b16}
-.comboHeaderDark h3{font:22px 'Rozha One';font-weight:400;margin:0 0 14px;color:#f5ecdd;line-height:1.2}
-.comboBodyDark ul{list-style:none;padding:0;margin:0 0 20px;font-size:12.5px;color:#d6cec1;line-height:1.8}
-.comboFooterDark{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(200,154,63,.25);padding-top:14px}
-.comboPriceDark{font:24px 'Yatra One';color:var(--match-gold2)}
-@media(max-width:1024px){
-  .menuCards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:760px){
- .menuHero{padding:62px 0 48px}.menuNav{top:68px}.menuNavInner{justify-content:flex-start;padding-left:7px;padding-right:7px}
- .menuSection{padding:58px 0 5px}.menuSectionHead{display:block}.menuSectionHead h3{font-size:37px}.menuSectionHead p{text-align:left;margin-top:8px}
- .menuCards{grid-template-columns:1fr}.foodCardMedia{height:225px}
-}
-</style>
-
 <section class="menuHero">
   <div class="container center menuHeroInner">
     <div class="menuKicker">KEWAT'S OFFICIAL MENU</div>
     <h2>Authentic Dum. Royal Flavour.</h2>
     <p>Every plate is prepared with attention to flavour, quality and consistency. From the first aroma to the last bite.</p>
+    
+    <!-- Category Filter Pills -->
+    <div class="filterPills">
+      <button class="filterPill active" onclick="filterMenu('all')">🍽️ ALL DISHES</button>
+      <button class="filterPill" onclick="filterMenu('biryani')">🍗 SIGNATURE BIRYANIS</button>
+      <button class="filterPill" onclick="filterMenu('combo')">🍱 ROYAL COMBOS</button>
+      <button class="filterPill" onclick="filterMenu('burger')">🍔 GOURMET BURGERS</button>
+    </div>
   </div>
 </section>
 
 <nav class="menuNav">
   <div class="container menuNavInner">
-    <button onclick="document.getElementById('signature-biryanis').scrollIntoView()">SIGNATURE BIRYANIS</button>
-    <button onclick="document.getElementById('royal-combos').scrollIntoView()">ROYAL COMBOS & FEASTS</button>
-    <button onclick="document.getElementById('gourmet-burgers').scrollIntoView()">GOURMET BURGERS</button>
+    <button onclick="document.getElementById('signature-biryanis').scrollIntoView({behavior:'smooth'})">SIGNATURE BIRYANIS</button>
+    <button onclick="document.getElementById('royal-combos').scrollIntoView({behavior:'smooth'})">ROYAL COMBOS & FEASTS</button>
+    <button onclick="document.getElementById('gourmet-burgers').scrollIntoView({behavior:'smooth'})">GOURMET BURGERS</button>
   </div>
 </nav>
 
-<section id="signature-biryanis" class="menuSection">
+<!-- SECTION 1: SIGNATURE BIRYANIS -->
+<section id="signature-biryanis" class="menuSection menuItemCategory category-biryani">
   <div class="container">
     <div class="menuSectionHead">
       <div><div class="num">01 / BIRYANI</div><h3>Our Signature Biryanis</h3></div>
       <p>Delicate, aromatic, bold and royally satisfying. Slow-cooked the traditional way.</p>
     </div>
+
     <div class="menuCards">
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/lucknowi_chicken_biryani.jpg" alt="Royal Lucknowi Chicken Biryani"></div>
-        <div class="foodCardBody">
+      <!-- Dish 1 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/lucknowi_chicken_biryani.jpg" alt="Royal Lucknowi Chicken Biryani">
+          <span class="humanBadge">✨ SAFFRON & DUM</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Royal Lucknowi Chicken Biryani</h4><span class="foodPrice">₹229</span></div>
-            <p>Delicate, aromatic and royally satisfying.</p>
+            <h4 class="humanFoodCardTitle">Royal Lucknowi Chicken Biryani</h4>
+            <p class="humanFoodCardDesc">Delicate, aromatic and royally satisfying with saffron-infused basmati rice & tender chicken.</p>
           </div>
-          <div class="spicy">● SAFFRON & MILD SPICE</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹229</span>
+            <button class="orderBtn" onclick="openOrderModal('Royal Lucknowi Chicken Biryani', '₹229')">ORDER DISH &nbsp;→</button>
+          </div>
         </div>
       </article>
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/hyderabadi_chicken_biryani.jpg" alt="Authentic Hyderabadi Chicken Biryani"></div>
-        <div class="foodCardBody">
+
+      <!-- Dish 2 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/hyderabadi_chicken_biryani.jpg" alt="Authentic Hyderabadi Chicken Biryani">
+          <span class="humanBadge">🔥 BOLD SPICE DUM</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Authentic Hyderabadi Chicken Biryani</h4><span class="foodPrice">₹279</span></div>
-            <p>Bold spices. Deep flavours. Full satisfaction.</p>
+            <h4 class="humanFoodCardTitle">Authentic Hyderabadi Chicken Biryani</h4>
+            <p class="humanFoodCardDesc">Bold spices, deep flavours, boiled egg & full satisfaction slow-cooked on dum.</p>
           </div>
-          <div class="spicy">● BOLD & RICH SPICE</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹279</span>
+            <button class="orderBtn" onclick="openOrderModal('Authentic Hyderabadi Chicken Biryani', '₹279')">ORDER DISH &nbsp;→</button>
+          </div>
         </div>
       </article>
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/delhi_masala_chicken_biryani.jpg" alt="Delhi Masala Chicken Biryani"></div>
-        <div class="foodCardBody">
+
+      <!-- Dish 3 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/delhi_masala_chicken_biryani.jpg" alt="Delhi Masala Chicken Biryani">
+          <span class="humanBadge">🌶️ MASALA LAYERED</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Delhi Masala Chicken Biryani</h4><span class="foodPrice">₹249</span></div>
-            <p>Rich masala with every flavourful layer.</p>
+            <h4 class="humanFoodCardTitle">Delhi Masala Chicken Biryani</h4>
+            <p class="humanFoodCardDesc">Rich masala with every flavourful layer and succulent chicken pieces.</p>
           </div>
-          <div class="spicy">● MASALA LAYERED</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹249</span>
+            <button class="orderBtn" onclick="openOrderModal('Delhi Masala Chicken Biryani', '₹249')">ORDER DISH &nbsp;→</button>
+          </div>
         </div>
       </article>
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/traditional_dum_biryani.jpg" alt="Traditional Dum Chicken Biryani"></div>
-        <div class="foodCardBody">
+
+      <!-- Dish 4 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/traditional_dum_biryani.jpg" alt="Traditional Dum Chicken Biryani">
+          <span class="humanBadge">🏺 COPPER HANDI</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Traditional Dum Chicken Biryani</h4><span class="foodPrice">₹239</span></div>
-            <p>Slow-cooked the traditional way.</p>
+            <h4 class="humanFoodCardTitle">Traditional Dum Chicken Biryani</h4>
+            <p class="humanFoodCardDesc">Slow-cooked the traditional way in dough-sealed earthen copper deg.</p>
           </div>
-          <div class="spicy">● TRADITIONAL DUM</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹239</span>
+            <button class="orderBtn" onclick="openOrderModal('Traditional Dum Chicken Biryani', '₹239')">ORDER DISH &nbsp;→</button>
+          </div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section id="royal-combos" class="menuSection">
+<!-- SECTION 2: ROYAL COMBOS -->
+<section id="royal-combos" class="menuSection menuItemCategory category-combo">
   <div class="container">
     <div class="menuSectionHead">
       <div><div class="num">02 / COMBOS</div><h3>Royal Combos & Hyderabadi Feasts</h3></div>
-      <p>Biryani + Gourmet Burger + Soft Drink + Fresh Onion and Mint Chutney.</p>
+      <p>Biryani + Gourmet Burger + Soft Drink + Fresh Onion & Mint Chutney.</p>
     </div>
-    <div class="combosGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-      <article class="comboCardDark reveal">
-        <div class="comboHeaderDark">
-          <span class="comboTagDark">BESTSELLER</span>
-          <h3>Royal Lucknowi Chicken Biryani Combo</h3>
+
+    <div class="menuCards">
+      <!-- Combo 1 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/lucknowi_chicken_biryani.jpg" alt="Royal Lucknowi Combo">
+          <span class="humanBadge">👑 BESTSELLER</span>
         </div>
-        <div class="comboBodyDark">
-          <ul>
-            <li>✦ 500g Authentic Lucknowi Chicken Biryani</li>
-            <li>✦ Classic Chicken Burger</li>
-            <li>✦ 250ml Soft Drink</li>
-            <li>✦ Fresh Onion & Mint Chutney</li>
-          </ul>
-          <div class="comboFooterDark">
-            <span class="comboPriceDark">₹229</span>
-            <button class="matchBtn red" onclick="go('contact')">ORDER NOW</button>
+        <div class="humanFoodCardBody">
+          <div>
+            <h4 class="humanFoodCardTitle">Royal Lucknowi Chicken Biryani Combo</h4>
+            <p class="humanFoodCardDesc">✦ 500g Lucknowi Biryani<br>✦ Classic Chicken Burger<br>✦ 250ml Soft Drink + Chutney</p>
+          </div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹229</span>
+            <button class="orderBtn" onclick="openOrderModal('Royal Lucknowi Biryani Combo', '₹229')">ORDER COMBO &nbsp;→</button>
           </div>
         </div>
       </article>
 
-      <article class="comboCardDark reveal highlighted">
-        <div class="comboHeaderDark">
-          <span class="comboTagDark gold">FAMILY FEAST</span>
-          <h3>Family Lucknowi Chicken Biryani Combo</h3>
+      <!-- Combo 2 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/hotel_3.jpg" alt="Family Lucknowi Combo">
+          <span class="humanBadge">👨‍👩‍👧‍👦 1KG FAMILY FEAST</span>
         </div>
-        <div class="comboBodyDark">
-          <ul>
-            <li>✦ 1kg Authentic Lucknowi Chicken Biryani</li>
-            <li>✦ Classic Chicken Burger</li>
-            <li>✦ 750ml Soft Drink</li>
-            <li>✦ Fresh Onion & Mint Chutney</li>
-          </ul>
-          <div class="comboFooterDark">
-            <span class="comboPriceDark">₹405</span>
-            <button class="matchBtn red" onclick="go('contact')">ORDER NOW</button>
+        <div class="humanFoodCardBody">
+          <div>
+            <h4 class="humanFoodCardTitle">Family Lucknowi Chicken Biryani Combo</h4>
+            <p class="humanFoodCardDesc">✦ 1kg Authentic Lucknowi Biryani<br>✦ Classic Chicken Burger<br>✦ 750ml Soft Drink + Chutney</p>
+          </div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹405</span>
+            <button class="orderBtn" onclick="openOrderModal('Family Lucknowi Biryani Combo', '₹405')">ORDER COMBO &nbsp;→</button>
           </div>
         </div>
       </article>
 
-      <article class="comboCardDark reveal">
-        <div class="comboHeaderDark">
-          <span class="comboTagDark">CHEF'S SPECIAL</span>
-          <h3>Hyderabadi Chicken Biryani Feast</h3>
+      <!-- Combo 3 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/hyderabadi_chicken_biryani.jpg" alt="Hyderabadi Feast Combo">
+          <span class="humanBadge">🔥 CHEF'S SPECIAL</span>
         </div>
-        <div class="comboBodyDark">
-          <ul>
-            <li>✦ 500g Authentic Hyderabadi Chicken Biryani</li>
-            <li>✦ Double Cheese Chicken Burger</li>
-            <li>✦ 250ml Soft Drink</li>
-            <li>✦ Fresh Onion & Mint Chutney</li>
-          </ul>
-          <div class="comboFooterDark">
-            <span class="comboPriceDark">₹279</span>
-            <button class="matchBtn red" onclick="go('contact')">ORDER NOW</button>
+        <div class="humanFoodCardBody">
+          <div>
+            <h4 class="humanFoodCardTitle">Hyderabadi Chicken Biryani Feast</h4>
+            <p class="humanFoodCardDesc">✦ 500g Hyderabadi Dum Biryani<br>✦ Double Cheese Chicken Burger<br>✦ 250ml Soft Drink + Chutney</p>
+          </div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹279</span>
+            <button class="orderBtn" onclick="openOrderModal('Hyderabadi Biryani Feast', '₹279')">ORDER COMBO &nbsp;→</button>
           </div>
         </div>
       </article>
 
-      <article class="comboCardDark reveal highlighted">
-        <div class="comboHeaderDark">
-          <span class="comboTagDark gold">GRAND FEAST</span>
-          <h3>Grand Hyderabadi Chicken Biryani Feast</h3>
+      <!-- Combo 4 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/hotel_1.jpg" alt="Grand Hyderabadi Feast">
+          <span class="humanBadge">🏆 GRAND FEAST</span>
         </div>
-        <div class="comboBodyDark">
-          <ul>
-            <li>✦ 1kg Authentic Hyderabadi Chicken Biryani</li>
-            <li>✦ Double Cheese Chicken Burger</li>
-            <li>✦ 750ml Soft Drink</li>
-            <li>✦ Fresh Onion & Mint Chutney</li>
-          </ul>
-          <div class="comboFooterDark">
-            <span class="comboPriceDark">₹503</span>
-            <button class="matchBtn red" onclick="go('contact')">ORDER NOW</button>
+        <div class="humanFoodCardBody">
+          <div>
+            <h4 class="humanFoodCardTitle">Grand Hyderabadi Chicken Biryani Feast</h4>
+            <p class="humanFoodCardDesc">✦ 1kg Hyderabadi Dum Biryani<br>✦ Double Cheese Chicken Burger<br>✦ 750ml Soft Drink + Chutney</p>
+          </div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹503</span>
+            <button class="orderBtn" onclick="openOrderModal('Grand Hyderabadi Biryani Feast', '₹503')">ORDER COMBO &nbsp;→</button>
           </div>
         </div>
       </article>
@@ -1037,51 +1309,84 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
   </div>
 </section>
 
-<section id="gourmet-burgers" class="menuSection">
+<!-- SECTION 3: GOURMET BURGERS -->
+<section id="gourmet-burgers" class="menuSection menuItemCategory category-burger">
   <div class="container">
     <div class="menuSectionHead">
       <div><div class="num">03 / BURGERS</div><h3>Gourmet Burgers</h3></div>
       <p>Freshly crafted burgers made with crisp patties, melted cheese and secret house sauces.</p>
     </div>
+
     <div class="menuCards">
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/classic_chicken_burger.jpg" alt="Classic Chicken Burger"></div>
-        <div class="foodCardBody">
+      <!-- Burger 1 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/classic_chicken_burger.jpg" alt="Classic Chicken Burger">
+          <span class="humanBadge">🍗 GOURMET PATTY</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Classic Chicken Burger</h4><span class="foodPrice">₹149</span></div>
-            <p>Crispy chicken patty, fresh lettuce, tomato & mayo in sesame bun.</p>
+            <h4 class="humanFoodCardTitle">Classic Chicken Burger</h4>
+            <p class="humanFoodCardDesc">Crispy fried chicken patty, fresh lettuce, tomato & creamy mayo in sesame bun.</p>
           </div>
-          <div class="spicy">● GOURMET CHICKEN</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹149</span>
+            <button class="orderBtn" onclick="openOrderModal('Classic Chicken Burger', '₹149')">ORDER BURGER &nbsp;→</button>
+          </div>
         </div>
       </article>
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/classic_veg_burger.jpg" alt="Classic Veg Burger"></div>
-        <div class="foodCardBody">
+
+      <!-- Burger 2 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/classic_veg_burger.jpg" alt="Classic Veg Burger">
+          <span class="humanVegBadge">🟢 VEGETARIAN</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Classic Veg Burger</h4><span class="foodPrice">₹99</span></div>
-            <p>Crispy vegetable patty, fresh lettuce, tomato, onion & special sauce.</p>
+            <h4 class="humanFoodCardTitle">Classic Veg Burger</h4>
+            <p class="humanFoodCardDesc">Crispy spiced vegetable patty, fresh lettuce, tomato, onion & house special sauce.</p>
           </div>
-          <div class="spicy"><span class="vegDot"></span>VEGETARIAN</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹99</span>
+            <button class="orderBtn" onclick="openOrderModal('Classic Veg Burger', '₹99')">ORDER BURGER &nbsp;→</button>
+          </div>
         </div>
       </article>
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/double_cheese_veg_burger.jpg" alt="Double Cheese Veg Patty Burger"></div>
-        <div class="foodCardBody">
+
+      <!-- Burger 3 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/double_cheese_veg_burger.jpg" alt="Double Cheese Veg Patty Burger">
+          <span class="humanVegBadge">🟢 DOUBLE CHEESE</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Double Cheese Veg Patty Burger</h4><span class="foodPrice">₹129</span></div>
-            <p>Double cheese layers over crisp veggie patty with herbs.</p>
+            <h4 class="humanFoodCardTitle">Double Cheese Veg Patty Burger</h4>
+            <p class="humanFoodCardDesc">Double melted cheddar cheese layers over crispy spiced veggie patty with fresh herbs.</p>
           </div>
-          <div class="spicy"><span class="vegDot"></span>DOUBLE CHEESE VEG</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹129</span>
+            <button class="orderBtn" onclick="openOrderModal('Double Cheese Veg Burger', '₹129')">ORDER BURGER &nbsp;→</button>
+          </div>
         </div>
       </article>
-      <article class="foodCard reveal">
-        <div class="foodCardMedia"><img src="images/kewat_special_burger.jpg" alt="Kewat's Special Signature Burger"></div>
-        <div class="foodCardBody">
+
+      <!-- Burger 4 -->
+      <article class="humanFoodCard reveal">
+        <div class="humanFoodCardMedia">
+          <img src="images/kewat_special_burger.jpg" alt="Kewat's Special Signature Burger">
+          <span class="humanBadge">⭐ SIGNATURE SPECIAL</span>
+        </div>
+        <div class="humanFoodCardBody">
           <div>
-            <div class="foodCardMeta"><h4>Kewat's Special Signature Burger</h4><span class="foodPrice">₹159</span></div>
-            <p>Loaded gourmet double chicken patty burger with double cheese & caramelized onions.</p>
+            <h4 class="humanFoodCardTitle">Kewat's Special Signature Burger</h4>
+            <p class="humanFoodCardDesc">Loaded gourmet double chicken patty burger with double melted cheese & caramelized onions.</p>
           </div>
-          <div class="spicy">● SIGNATURE SPECIAL</div>
+          <div class="humanFoodCardMeta">
+            <span class="humanPrice">₹159</span>
+            <button class="orderBtn" onclick="openOrderModal('Kewat Special Signature Burger', '₹159')">ORDER BURGER &nbsp;→</button>
+          </div>
         </div>
       </article>
     </div>
@@ -1362,7 +1667,167 @@ h2{font:clamp(44px,6vw,73px) 'Rozha One';font-weight:400;line-height:.9;margin:1
 </section>
 </main>
 
-<footer class="footer">KEWAT'S BIRYANI PALACE • Indian dining, served with quiet grandeur.</footer>
+<footer class="humanFooter">
+  <div class="container">
+    <div class="footerGrid">
+      
+      <!-- Col 1: Brand & Philosophy -->
+      <div class="footerCol">
+        <h4>Kewat's Biryani Palace</h4>
+        <p>Founded by <strong>Niraj Kewat</strong> with a vision to serve authentic, aromatic and satisfying dum biryani. Prepared with attention to flavour, quality and consistency.</p>
+        <p style="margin-top:14px;color:var(--match-gold2);font-weight:600">~ Where every biryani tells a story.</p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footerCol">
+        <h4>Explore</h4>
+        <ul>
+          <li><a onclick="go('home')">Home</a></li>
+          <li><a onclick="go('menu')">Menu & Combos</a></li>
+          <li><a onclick="go('story')">Our Story</a></li>
+          <li><a onclick="go('experience')">Ambience & Experience</a></li>
+          <li><a onclick="go('contact')">Reservations & Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Hours & Location -->
+      <div class="footerCol">
+        <h4>Visit & Hours</h4>
+        <p><strong>Location:</strong> Main Palace Road, Lucknow, UP</p>
+        <p><strong>Operating Hours:</strong><br>Monday – Sunday: 11:00 AM – 11:00 PM</p>
+        <p><strong>Direct Concierge:</strong><br><a href="tel:+919876543210" style="color:var(--match-gold2);font-weight:700">+91 98765 43210</a></p>
+      </div>
+
+      <!-- Col 4: Ordering & Trust -->
+      <div class="footerCol">
+        <h4>Order Online</h4>
+        <ul>
+          <li><a href="https://www.swiggy.com" target="_blank" rel="noopener">Swiggy Delivery</a></li>
+          <li><a href="https://www.zomato.com" target="_blank" rel="noopener">Zomato Delivery</a></li>
+          <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener">WhatsApp Direct Order</a></li>
+          <li><a onclick="openModal('privacyModal')">Privacy Policy</a></li>
+          <li><a onclick="openModal('termsModal')">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footerBottom">
+      <div>
+        <span>© 2026 Kewat's Biryani Palace. All Rights Reserved.</span>
+      </div>
+      <div class="fssaiBadge">
+        <span>🛡️ FSSAI Licensed</span>
+        <small style="opacity:0.8">Lic No. 22624001000123</small>
+      </div>
+      <div>
+        <a onclick="openModal('privacyModal')" style="margin-right:15px">Privacy Policy</a>
+        <a onclick="openModal('termsModal')">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ORDER SELECTION MODAL -->
+<div id="orderModal" class="customModalOverlay">
+  <div class="customModalBox">
+    <button class="modalCloseBtn" onclick="closeModal('orderModal')">✕</button>
+    <h3 class="modalBoxTitle">Order Item</h3>
+    <div id="modalDishDetails" style="background:#041410;border:1px solid rgba(200,154,63,0.3);padding:14px;border-radius:8px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center">
+      <strong id="modalDishName" style="font-size:18px;color:var(--match-gold2)">Item Name</strong>
+      <span id="modalDishPrice" style="font:20px 'Yatra One';color:#fff">₹00</span>
+    </div>
+    <p style="font-size:13px;color:#d6cec1;margin-bottom:20px">Choose your preferred way to place this order:</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <a id="modalCallBtn" href="tel:+919876543210" class="minCard callCard" style="padding:16px;text-align:center;text-decoration:none;border-radius:8px">
+        <strong style="color:var(--match-gold2);display:block;font-size:15px;margin-bottom:4px">📞 Direct Call</strong>
+        <span style="font-size:11px;color:#d6cec1">Instant Takeaway / Booking</span>
+      </a>
+
+      <a id="modalWaBtn" href="https://wa.me/919876543210" target="_blank" class="minCard" style="padding:16px;text-align:center;text-decoration:none;border-radius:8px;background:#0d382d;border-color:#25D366">
+        <strong style="color:#25D366;display:block;font-size:15px;margin-bottom:4px">💬 WhatsApp</strong>
+        <span style="font-size:11px;color:#d6cec1">Order via Chat</span>
+      </a>
+
+      <a href="https://www.swiggy.com" target="_blank" class="minCard swiggyCard" style="padding:16px;text-align:center;text-decoration:none;border-radius:8px">
+        <strong style="color:#fc8019;display:block;font-size:15px;margin-bottom:4px">🧡 Swiggy</strong>
+        <span style="font-size:11px;color:#d6cec1">Home Delivery</span>
+      </a>
+
+      <a href="https://www.zomato.com" target="_blank" class="minCard zomatoCard" style="padding:16px;text-align:center;text-decoration:none;border-radius:8px">
+        <strong style="color:#cb202d;display:block;font-size:15px;margin-bottom:4px">❤️ Zomato</strong>
+        <span style="font-size:11px;color:#d6cec1">Delivery & Dining</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div id="privacyModal" class="customModalOverlay">
+  <div class="customModalBox">
+    <button class="modalCloseBtn" onclick="closeModal('privacyModal')">✕</button>
+    <h3 class="modalBoxTitle">Privacy Policy</h3>
+    <div class="modalBoxText">
+      <p><strong>Effective Date:</strong> January 1, 2026</p>
+      <p>At Kewat's Biryani Palace, we value your privacy. We collect minimal personal information (such as your phone number, name, and delivery address) strictly to process takeaway orders, table reservations, and customer support.</p>
+      <p>We do not sell, rent, or share your personal data with third parties except for essential delivery services (Swiggy, Zomato, logistics partners).</p>
+      <p>For questions regarding your privacy, please contact our concierge team at <a href="mailto:privacy@kewatsbiryani.com" style="color:var(--match-gold2)">privacy@kewatsbiryani.com</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS OF SERVICE MODAL -->
+<div id="termsModal" class="customModalOverlay">
+  <div class="customModalBox">
+    <button class="modalCloseBtn" onclick="closeModal('termsModal')">✕</button>
+    <h3 class="modalBoxTitle">Terms of Service</h3>
+    <div class="modalBoxText">
+      <p>Welcome to Kewat's Biryani Palace. By accessing our restaurant services, ordering online, or reserving a table, you agree to these terms:</p>
+      <p>1. <strong>Food Quality & Allergic Information:</strong> All dishes are freshly prepared using authentic spices, nuts, and dairy products. Please inform our staff of any food allergies prior to placing your order.</p>
+      <p>2. <strong>Pricing & Taxes:</strong> Menu prices are in Indian Rupees (INR) and are inclusive of applicable taxes.</p>
+      <p>3. <strong>Reservations & Cancellations:</strong> Table reservations are held for 15 minutes past the booking time. Please notify us if you are delayed.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function filterMenu(category) {
+  const pills = document.querySelectorAll('.filterPill');
+  pills.forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const categories = document.querySelectorAll('.menuItemCategory');
+  categories.forEach(cat => {
+    if (category === 'all') {
+      cat.style.display = 'block';
+    } else if (cat.classList.contains('category-' + category)) {
+      cat.style.display = 'block';
+    } else {
+      cat.style.display = 'none';
+    }
+  });
+}
+
+function openOrderModal(dishName, price) {
+  document.getElementById('modalDishName').textContent = dishName;
+  document.getElementById('modalDishPrice').textContent = price;
+  const encoded = encodeURIComponent(`Hello Kewat's Biryani, I would like to order: ${dishName} (${price})`);
+  document.getElementById('modalWaBtn').href = `https://wa.me/919876543210?text=${encoded}`;
+  openModal('orderModal');
+}
+
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if(modal) modal.classList.add('open');
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if(modal) modal.classList.remove('open');
+}
+</script>
+
 
 <script>
 const loader=document.getElementById('loader');
