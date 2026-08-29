@@ -2798,18 +2798,18 @@
 
     <nav class="nav matchNav">
       <div class="container navin matchNavInner">
-        <img
-          src="images/logo_green.jpg"
-          alt="Kewat's Biriyani Logo"
-          class="matchLogoImg"
-          onclick="go('home')"
-          style="
-            cursor: pointer;
-            height: 65px;
-            margin-right: 15px;
-            border-radius: 8px;
-          "
-        />
+        <div class="matchLogo" onclick="go('home')">
+          <img
+            src="images/logo.jpg"
+            alt="Kewat's Biriyani Logo"
+            style="
+              width: 135px;
+              height: auto;
+              mix-blend-mode: screen;
+              margin-top: 15px;
+            "
+          />
+        </div>
         <button
           class="menuBtn"
           onclick="document.querySelector('.links').classList.toggle('open')"
@@ -6108,4 +6108,3 @@
     </style>
   </body>
 </html>
-
